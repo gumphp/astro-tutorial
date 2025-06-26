@@ -2,10 +2,12 @@
 import Posts from '../components/Posts.astro'
 import BaseLayouts from '../layouts/BaseLayouts.astro'
 
-const pageTitle = '博客'
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+
+const pageTitle = "我的 Astro 学习博客";
 ---
 <BaseLayouts pageTitle={pageTitle}>
 	<h1>{pageTitle}</h1>
-	<h2>我的博客</h2>
-	<Posts />
+	<p>在这里，我将分享我的 Astro 学习之旅。</p>
+	{allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
 </BaseLayouts>
