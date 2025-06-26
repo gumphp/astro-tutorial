@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro'
 import Posts from '../components/Posts.astro';
+import Footer from '../components/Footer.astro';
 
 const pageTitle = "About";
 
@@ -64,5 +65,7 @@ const skillColor = "green";
         {goal === 3 ? <p>我的目标是在三天内完成。</p> : <p>我的目标不是 3 天。</p>}
 
 		<Posts />
+
+        <Footer />
 	</body>
 </html>
